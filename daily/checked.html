@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {
+            margin: 10px auto;
+            border-color: white;
+            border-collapse: collapse;
+            text-align: center;
+            width: 500px;
+            height: 200px;
+
+        }
+
+        thead {
+            height: 50px;
+            color: white;
+            background-color: blue;
+        }
+
+        tbody {
+            color: black;
+            background-color: #999;
+        }
+    </style>
+</head>
+
+<body>
+    <table border="1">
+        <thead>
+            <td><input type="checkbox" id="all"></td>
+            <td>商品</td>
+            <td>价钱</td>
+        </thead>
+        <tbody id="kids">
+            <tr>
+                <td><input type="checkbox"></td>
+                <td>iphone 14 pro max</td>
+                <td>9999</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox"></td>
+                <td>ipad pro</td>
+                <td>5000</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox"></td>
+                <td>ipad air</td>
+                <td>2000</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox"></td>
+                <td>apple watch</td>
+                <td>3999</td>
+            </tr>
+        </tbody>
+    </table>
+    <script>
+        var head = document.getElementById('all');
+        var all = document.getElementById('kids').getElementsByTagName('input');
+        head.onclick = function () {
+            for (var i = 0; i < all.length; i++) {
+                all[i].checked = this.checked;
+            }
+        }
+        for (var i = 0; i < all.length; i++) {
+            all[i].onclick = function () {
+                var flag = true;
+                for (var i = 0; i < all.length; i++) {
+                    if (!all[i].checked) {
+                        flag = false;
+                        break;
+                    }
+                }
+                head.checked = flag;
+            }
+        }
+    </script>
+</body>
+
+</html>

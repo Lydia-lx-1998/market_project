@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./js/jQuery.min.js"></script>
+    <style>
+        .btns button {
+            width: 45px;
+            height: 20px;
+            background-color: #ccc;
+            margin: 10px 15px;
+            color: black;
+            text-align: center;
+            /* line-height: 20px; */
+        }
+
+        .show_hide button {
+            width: 50px;
+            height: 20px;
+            background-color: #fff;
+            margin: 10px 15px;
+            color: black;
+            text-align: center;
+        }
+
+        .showBox {
+            width: 240px;
+            height: 300px;
+            background-color: pink;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="btns">
+        点击事件
+        <button>click</button>
+        <button>click</button>
+        <button>click</button>
+        <button>click</button>
+        <button>click</button>
+        <button>click</button>
+        <button>click</button>
+    </div>
+
+    <div class="show_hide">
+        <button class="show">显示</button>
+        <button class="hide">隐藏</button>
+        <button class="toggle">切换</button>
+        <div class="showBox"></div>
+    </div>
+    <script>
+        $(function () {
+            //点击按钮切换颜色
+            $(".btns button").click(function () {
+                $(this).css("color", "red").siblings().css("color", "");
+                $(this).parent().css("color", "skyblue");
+            })
+
+            //点击按钮对div盒子进行操作
+            $(".show_hide .show").click(function () {
+                $(this).siblings("div").show();
+            })
+            $(".show_hide .hide").click(function () {
+                $(this).siblings("div").hide();
+            })
+            $(".show_hide .toggle").click(function () {
+                $(this).siblings("div").toggle();
+            })
+
+        })
+    </script>
+</body>
+
+</html>

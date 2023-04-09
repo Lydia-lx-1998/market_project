@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .black {
+            background-color: black;
+        }
+
+        .white {
+            background-color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <button id="btn">开关灯</button>
+    <script>
+        var an = document.getElementById('btn');
+        var bd = document.body;
+        var flag = 0;
+        an.onclick = function () {
+
+            /*console.log(flag);*/
+            if (flag == 0) {
+                bd.className = ('black');
+                flag = 1;
+            } else {
+                bd.className = ('white');
+                flag = 0;
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,68 @@
+.box {
+    position: relative;
+    width: 500px;
+    height: 350px;
+    margin: 10px auto;
+    /* ps */
+    /* background-color: pink; */
+    overflow: hidden;
+
+}
+
+
+.box:hover img {
+    transform: scale(1.2);
+}
+
+.box:hover .pro {
+    top: 200px;
+}
+
+.box:hover .mask {
+    opacity: 1;
+}
+
+.box img {
+    width: 100%;
+    transition: all 0.4s;
+}
+
+.box .mask {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 500px;
+    height: 350px;
+    opacity: 0;
+    background-image: linear-gradient(transparent,
+            rgba(0, 0, 0, .6));
+}
+
+.box .pro {
+    position: absolute;
+    top: 245px;
+    left: 50px;
+    width: 350px;
+    height: 150px;
+    /* background-color: pink; */
+    transition: all 0.4s;
+}
+
+.box .pro h3 {
+    font-weight: 400;
+    color: aliceblue;
+}
+
+.box .pro h2 {
+    color: aliceblue;
+}
+
+.box .pro p {
+    color: rgba(255, 255, 255, .8);
+}
+
+.box .pro span {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+}

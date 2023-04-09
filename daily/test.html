@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/test.css">
+    <title>Document</title>
+    <style>
+        .Name {
+            display: block;
+            margin: 50px auto;
+            outline-style: none;
+            color: #999;
+        }
+
+        .newName {
+
+            color: #333;
+            border-color: pink;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="login">
+        <input class="Name" type="text" value="用户名/ID/手机号" id="login">
+        <input class='Name' type="text" value="密码" id="psw">
+    </div>
+    <script>
+        var text = document.getElementById('login');
+        text.onfocus = function () {
+            if (this.value === '用户名/ID/手机号') {
+                this.value = ''
+            }
+            this.className = 'newName Name';
+        }
+        text.onblur = function () {
+            if (this.value === '') {
+                this.value = '用户名/ID/手机号';
+                this.className = 'Name';
+            }
+
+        }
+
+        var word = document.getElementById('psw');
+        word.onfocus = function () {
+            this.type = 'password';
+            if (this.value === '密码') {
+                this.value = '';
+            }
+            this.className = 'newName Name';
+        }
+        word.onblur = function () {
+            if (this.value === '') {
+                this.value = '密码';
+                this.type = 'text';
+                this.className = 'Name';
+            }
+        }
+
+    </script>
+</body>
+
+</html>
